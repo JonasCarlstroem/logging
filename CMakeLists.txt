@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 
-add_subdirectory(base)
+add_subdirectory(logger)
 add_subdirectory(console)
 add_subdirectory(event)
 add_subdirectory(file)

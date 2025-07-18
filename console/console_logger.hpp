@@ -1,5 +1,5 @@
 #pragma once
-#include "../base/logger.hpp"
+#include "../logger/logger.hpp"
 #include <filesystem>
 #include <proc/process>
 #include <sstream>
