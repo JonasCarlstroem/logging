@@ -10,3 +10,12 @@ add_executable(external_console "external_console.cpp")
 add_dependencies(logging_console external_console)
 
 target_compile_features(external_console INTERFACE cxx_std_17)
+
+install(TARGETS logging_console
+		EXPORT libTargets
+		LIBRARY DESTINATION lib
+		ARCHIVE DESTINATION lib
+		RUNTIME DESTINATION bin
+		INCLUDES DESTINATION include)
+
+install(DIRECTORY ../include/ DESTINATION include)
