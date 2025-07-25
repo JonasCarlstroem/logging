@@ -1,6 +1,6 @@
 #pragma once
 #include <fstream>
-#include "../logger/logger.hpp"
+#include "logging/logger.h"
 
 namespace logging {
 

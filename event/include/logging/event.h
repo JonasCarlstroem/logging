@@ -1,6 +1,6 @@
 #pragma once
-#include "../base/logger.hpp"
-#include <winapi/handle>
+#include <winapi/handle.h>
+#include "logging/logger.h"
 
 namespace logging {
 

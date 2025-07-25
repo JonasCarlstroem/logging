@@ -1,8 +1,11 @@
 #pragma once
-#include "../logger/logger.hpp"
+// std
 #include <filesystem>
-#include <proc/process>
 #include <sstream>
+
+// lib
+#include "logging/logger.h"
+#include <proc/process.h>
 
 namespace fs = std::filesystem;
 

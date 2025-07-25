@@ -3,13 +3,12 @@ cmake_minimum_required(VERSION 3.23)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(logging_event INTERFACE)
+#add_library(logging_event INTERFACE)
+CREATE_LIB(logging_event INTERFACE)
 
-install(TARGETS logging_event
-		EXPORT libTargets
-		LIBRARY DESTINATION lib
-		ARCHIVE DESTINATION lib
-		RUNTIME DESTINATION bin
-		INCLUDES DESTINATION include)
+target_include_directories(logging_event INTERFACE 
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+	$<INSTALL_INTERFACE:include/logging/event>
+)
 
-install(DIRECTORY ../include/ DESTINATION include)
+INSTALL_LIB(logging_event True logging/event)

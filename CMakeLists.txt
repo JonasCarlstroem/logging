@@ -9,14 +9,10 @@ add_subdirectory(console)
 add_subdirectory(event)
 add_subdirectory(file)
 
-add_library(logging INTERFACE)
+#add_library(logging INTERFACE)
+CREATE_LIB(logging INTERFACE)
 
 target_compile_features(logging INTERFACE cxx_std_17)
-
-target_include_directories(logging INTERFACE 
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-	$<INSTALL_INTERFACE:include>
-)
 
 target_link_libraries(logging
 	INTERFACE logging_base
@@ -24,13 +20,4 @@ target_link_libraries(logging
 	INTERFACE logging_console
 )
 
-install(TARGETS logging
-		EXPORT libTargets
-		LIBRARY DESTINATION logging
-		ARCHIVE DESTINATION logging
-		RUNTIME DESTINATION bin
-		INCLUDES DESTINATION include)
-
-install(DIRECTORY include/ DESTINATION include)
-
-set(LIB_TARGETS logging PARENT_SCOPE)
+INSTALL_LIB(logging False logging)
